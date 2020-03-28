@@ -1,0 +1,21 @@
+<input type="text" [(ngModel)]="searchText" placeholder="search" (input)="search()">
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">user name</th>
+        <th scope="col">email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <a [routerLink]="['/user-details', user.id]"><td>{{user.name}}</td></a>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+
